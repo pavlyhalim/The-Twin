@@ -1,8 +1,8 @@
 # Network Cognitive Manager Simulator
 
-## Live demo 
+# Live demo 
 
-[https://the-twin.streamlit.app/]
+# https://the-twin.streamlit.app/
 
 ## Overview
 
