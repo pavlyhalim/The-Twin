@@ -1,8 +1,13 @@
 # Network Cognitive Manager Simulator
 
+## Live demo 
+
+[https://the-twin.streamlit.app/]
+
 ## Overview
 
 The **Network Cognitive Manager Simulator** is an AI-driven network optimization system that simulates a dynamic network environment using randomly generated data. This project demonstrates how to generate network telemetry, visualize network topology, predict network congestion, and perform reinforcement learning–based optimization—all in one integrated simulator.
+
 
 ## Features
 
