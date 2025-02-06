@@ -584,7 +584,7 @@ def main():
     viz_mode = st.sidebar.radio("Visualization Mode", options=["2D", "3D"])
     if st.sidebar.button("Inject Network Anomaly"):
         inject_network_anomaly()
-        st.experimental_rerun()
+        st.rerun()
     
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
         "Dashboard", "Training", "Optimization", "Simulation", "Create Your Own Network Playground", "About"
@@ -628,7 +628,7 @@ def main():
             if st.button("Add Node"):
                 new_id = st.session_state.twin.add_node((new_lon, new_lat), int(new_capacity))
                 st.success(f"Node {new_id} added at (lat: {new_lat}, lon: {new_lon}) with capacity {new_capacity}.")
-                st.experimental_rerun()
+                st.rerun()
         with col2:
             st.subheader("Remove a Node")
             rem_node = st.number_input("Node ID to Remove", value=0, step=1, key="rem_node")
@@ -636,7 +636,7 @@ def main():
                 if rem_node in st.session_state.twin.topology.nodes():
                     st.session_state.twin.remove_node(int(rem_node))
                     st.success(f"Node {rem_node} removed.")
-                    st.experimental_rerun()
+                    st.rerun()
                 else:
                     st.error(f"Node {rem_node} does not exist.")
         st.subheader("Connect Nodes")
@@ -649,7 +649,7 @@ def main():
             if node_a != node_b:
                 st.session_state.twin.add_edge(node_a, node_b)
                 st.success(f"Connected Node {node_a} and Node {node_b}.")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Cannot connect a node to itself.")
         st.subheader("Remove an Edge")
@@ -662,7 +662,7 @@ def main():
             if st.session_state.twin.topology.has_edge(edge_a, edge_b):
                 st.session_state.twin.remove_edge(edge_a, edge_b)
                 st.success(f"Edge between Node {edge_a} and Node {edge_b} removed.")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("The specified edge does not exist.")
         st.subheader("Modify a Node")
@@ -676,7 +676,7 @@ def main():
         if st.button("Update Node"):
             st.session_state.twin.update_node(mod_node, pos=(new_pos_lon, new_pos_lat), capacity=int(new_cap))
             st.success(f"Node {mod_node} updated.")
-            st.experimental_rerun()
+            st.rerun()
         st.subheader("Current Network Configuration")
         nodes_data = []
         for n in st.session_state.twin.topology.nodes(data=True):
