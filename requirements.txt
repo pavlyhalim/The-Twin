@@ -6,3 +6,4 @@ networkx
 pyvis
 stable-baselines3
 gymnasium
+shapely
